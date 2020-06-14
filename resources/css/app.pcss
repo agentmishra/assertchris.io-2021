@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+textarea {
+    resize: none;
+}
+
+.transition-height {
+    transition: height 250ms;
+}
+
+.transition-opacity {
+    transition: opacity 150ms;
+}
+
+.article pre {
+    @apply flex w-full overflow-y-hidden overflow-x-auto border-4 border-gray-100 py-4;
+}
+
+.article * + p,
+.article * + blockquote,
+.article * + pre,
+.article * + h1,
+.article * + h2,
+.article * + h3,
+.article * + .embedded_image,
+.article * + .inline_html {
+    @apply mt-4;
+}
+
+.article h1 {
+    @apply text-3xl;
+}
+.article h2 {
+    @apply text-2xl;
+}
+.article h3 {
+    @apply text-xl;
+}
+
+.article blockquote {
+    @apply border-l-2 border-gray-300 pl-1;
+}
+
+.article pre + blockquote {
+    @apply mt-0 bg-gray-100 border-l-0 w-full pl-1;
+}
+
+.article ol {
+    @apply list-decimal ml-8 mt-4;
+}
+
+.article ul {
+    @apply list-disc ml-8 mt-4;
+}
+
+.hljs {
+    @apply leading-normal font-mono px-4 overflow-visible;
+}
+
+.article a {
+    @apply text-blue-500 underline;
+}
