@@ -22,6 +22,10 @@ Route::feeds();
 Route::get('/posts/{post:slug}', [ShowPostResponder::class, 'handle'])->name('show-post');
 Route::get('/', [ShowHomeResponder::class, 'handle'])->name('show-home');
 
+// redirects ↓
+
 Route::get('/post/{post:slug}', function(WinkPostProxy $post) {
     return redirect()->route('show-post', $post->slug);
 });
+
+Route::redirect('/pro-php-mvc', '/posts/2020-06-15-writing-a-book-about-php-framework-dev');
