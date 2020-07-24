@@ -17,7 +17,7 @@ class WinkPostProxy extends WinkPost implements Feedable
 {
     public static function getFeedItems()
     {
-        return static::all();
+        return static::latest()->published()->get();
     }
 
     public function toFeedItem()
